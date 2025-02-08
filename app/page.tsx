@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="https://s3.amazonaws.com/wino-feed/testFeed/bvd/miami-water-bg-video.mp4"
+        poster="/bg-video-placeholder.jpg"
         autoPlay
         playsInline
         loop
@@ -20,59 +21,54 @@ export default function Home() {
       {/* Content Container - 16:9 Aspect Ratio */}
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="w-full max-w-[1920px] aspect-video relative px-4">
-          <div className="absolute inset-0 grid grid-cols-2 gap-4">
-            {/* Left Column */}
-            <div className="relative flex flex-col justify-between">
-              {/* Top Title Image */}
-              <div className="relative w-full pt-[10%]">
-                <div className="relative w-[70%] min-w-[200px]">
-                  <Image
-                    src="/title-text.png"
-                    alt="Miami Water Wax Logo"
-                    width={714}
-                    height={349}
-                    className="object-contain w-full h-auto ml-[15%] lg:ml-[0%]"
-                  />
-                </div>
-              </div>
-
-              {/* Bottom Stacked Logos */}
-              <div className="relative ml-[5%] lg:ml-[20%] mb-[10%]">
-                <div className="relative w-[45%] min-w-[150px]">
-                  <Image
-                    src="/miami-water-wax-logo-alpha.png"
-                    alt="Miami Water Wax Logo"
-                    width={369}
-                    height={370}
-                    className="object-contain w-full h-auto ml-[25%] lg:ml-[0%]"
-                    priority
-                  />
-                </div>
-                <div className="relative w-[80%] min-w-[250px] -mt-4">
-                  <Image
-                    src="/wax-logo-text.png"
-                    alt="Miami Water Wax Logo Text"
-                    width={724}
-                    height={177}
-                    className="object-contain w-full h-auto"
-                    priority
-                  />
-                </div>
-              </div>
+          {/* Stacked Images Container */}
+          <div className="absolute inset-0">
+            {/* Title Image */}
+            <div className="absolute inset-0">
+              <Image
+                src="/mwc-text-heading.png"
+                alt="Miami Water Wax Logo"
+                width={1920}
+                height={1080}
+                className="object-contain w-full h-full"
+                priority
+              />
             </div>
 
-            {/* Right Column - Badge Logo */}
-            <div className="relative flex items-center justify-end">
-              <div className="relative w-[60%] min-w-[200px] mr-[5%] lg:mr-[15%]">
-                <Image
-                  src="/miami-water-badge-logo.png"
-                  alt="Miami Water Badge Logo"
-                  width={664}
-                  height={801}
-                  className="object-contain w-full h-auto"
-                  priority
-                />
-              </div>
+            {/* Wax Seal Logo */}
+            <div className="absolute inset-0">
+              <Image
+                src="/mwc-wax-seal-logo.png"
+                alt="Miami Water Wax Logo"
+                width={1920}
+                height={1080}
+                className="object-contain w-full h-full"
+                priority
+              />
+            </div>
+
+            {/* Sub Heading */}
+            <div className="absolute inset-0">
+              <Image
+                src="/mwc-sub-heading.png"
+                alt="Miami Water Wax Logo Text"
+                width={1920}
+                height={1080}
+                className="object-contain w-full h-full"
+                priority
+              />
+            </div>
+
+            {/* Badge Logo */}
+            <div className="absolute inset-0">
+              <Image
+                src="/mwc-badge-logo.png"
+                alt="Miami Water Badge Logo"
+                width={1920}
+                height={1080}
+                className="object-contain w-full h-full"
+                priority
+              />
             </div>
           </div>
         </div>
